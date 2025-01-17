@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  background-color: #f4f4f4;
+}
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.input {
+  margin: 20px 0;
+}
+
+.input input {
+  padding: 10px;
+  width: 70%;
+  font-size: 16px;
+}
+
+.input button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.input button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movie {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.movie-info {
+  margin-top: 10px;
+}
