@@ -1,6 +1,9 @@
+// src/App.js
 import React, { useState } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import MovieDetails from "./MovieDetails";
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -32,33 +35,52 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <main>
-        <h1>Movie Finder</h1>
-        <div className="input">
-          <input
-            type="text"
-            placeholder="Search for movies..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button onClick={searchMovies}>Submit</button>
-        </div>
-        {error && <div className="error">{error}</div>}
-        <div className="movies">
-          {movies.map((movie) => (
-            <div key={movie.imdbID} className="movie">
-              <img src={movie.Poster} alt={movie.Title} />
-              <div className="movie-info">
-                <h3>{movie.Title}</h3>
-                <p>{movie.Year}</p>
-              </div>
+    <Router>
+      <Routes>
+        {/* Home route */}
+        <Route
+          path="/"
+          element={
+            <div className="container">
+              <main>
+                <h1>Movie Finder</h1>
+                <div className="input">
+                  <input
+                    type="text"
+                    placeholder="Search for movies..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                  />
+                  <button onClick={searchMovies}>Submit</button>
+                </div>
+                {error && <div className="error">{error}</div>}
+                <div className="movies">
+                  {movies.map((movie) => (
+                    <Link
+                      key={movie.imdbID}
+                      to={`/movie/${movie.imdbID}`}
+                      className="movie-link"
+                    >
+                      <div className="movie">
+                        <img src={movie.Poster} alt={movie.Title} />
+                        <div className="movie-info">
+                          <h3>{movie.Title}</h3>
+                          <p>{movie.Year}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </main>
             </div>
-          ))}
-        </div>
-      </main>
-    </div>
+          }
+        />
+        {/* Details route */}
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
+
