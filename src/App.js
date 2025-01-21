@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import MovieDetails from "./MovieDetails";
 
@@ -37,7 +37,6 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Home route */}
         <Route
           path="/"
           element={
@@ -75,12 +74,11 @@ const App = () => {
             </div>
           }
         />
-        {/* Details route */}
         <Route path="/movie/:id" element={<MovieDetails />} />
       </Routes>
     </Router>
   );
+  
 };
 
 export default App;
-
