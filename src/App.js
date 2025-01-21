@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from "react";
 import axios from "axios";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -34,6 +33,13 @@ const App = () => {
     }
   };
 
+  // Handler for Enter key press
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      searchMovies();
+    }
+  };
+
   return (
     <Router>
       <Routes>
@@ -49,6 +55,7 @@ const App = () => {
                     placeholder="Search for movies..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleKeyDown} // Added event listener for Enter key
                   />
                   <button onClick={searchMovies}>Submit</button>
                 </div>
@@ -78,7 +85,7 @@ const App = () => {
       </Routes>
     </Router>
   );
-  
 };
 
 export default App;
+
