@@ -59,32 +59,48 @@ h1 {
   justify-content: center;
 }
 
-/* Kartice sa filmovima */
+/* Movie Cards */
 .movie {
-  background: #1f1f1f; /* Tamna pozadina kartice */
+  background: #1f1f1f; /* Dark background for the card */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  width: 200px; /* Fiksna širina za sve kartice */
-  height: 350px; /* Fiksna visina za sve kartice */
+  width: 200px; /* Fixed width for all cards */
+  height: 350px; /* Fixed height for all cards */
   text-align: center;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Raspoređivanje sadržaja */
+  justify-content: space-between; /* Evenly distribute content */
 }
 
-/* Slike */
 .movie img {
-  width: 100%; /* Širina slike prilagođena kartici */
-  height: 250px; /* Fiksna visina slike */
-  object-fit: cover; /* Prilagođava sliku unutar dimenzija */
+  width: 100%;
+  height: 250px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures the image scales proportionally */
   border-radius: 5px;
 }
 
-/* Informacije o filmu */
 .movie-info {
-  margin-top: 10px;
-  color: #ffffff; /* Belo za tekst na kartici */
+  flex-grow: 1; /* Ensures the text area takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Spacing between title and year */
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff; /* White text */
+  text-align: center;
+  margin: 0;
+}
+
+.movie-info p {
+  font-size: 14px;
+  color: #bb86fc; /* Purple text for the year */
+  margin: 0;
 }
 
 .movie-link {
@@ -123,7 +139,8 @@ h1 {
 }
 .movie-details p {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .movie-details strong {
