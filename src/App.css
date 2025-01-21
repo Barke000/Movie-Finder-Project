@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: "Roboto Mono", monospace;
-  background-color: #000000;
+  background-color: #121212;
+  color: #fff;
 }
 
 .container {
@@ -16,7 +17,7 @@ main {
 
 h1 {
   font-size: 2rem;
-  color: #333;
+  color: #bb86fc;
 }
 
 .input {
@@ -27,24 +28,27 @@ h1 {
   padding: 10px;
   width: 70%;
   font-size: 16px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #bb86fc;
 }
 
 .input button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
-  color: white;
+  background-color: #bb86fc;
+  color: #121212;
   border: none;
   cursor: pointer;
   margin-left: 10px;
 }
 
 .input button:hover {
-  background-color: #0056b3;
+  background-color: #3700b3;
 }
 
 .error {
-  color: red;
+  color: #cf6679;
   margin-top: 20px;
 }
 
@@ -55,23 +59,34 @@ h1 {
   justify-content: center;
 }
 
+/* Kartice sa filmovima */
 .movie {
-  background: white;
+  background: #1f1f1f; /* Tamna pozadina kartice */
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 200px; /* Fiksna širina za sve kartice */
+  height: 350px; /* Fiksna visina za sve kartice */
   text-align: center;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Raspoređivanje sadržaja */
 }
 
+/* Slike */
 .movie img {
-  width: 100%;
+  width: 100%; /* Širina slike prilagođena kartici */
+  height: 250px; /* Fiksna visina slike */
+  object-fit: cover; /* Prilagođava sliku unutar dimenzija */
   border-radius: 5px;
 }
 
+/* Informacije o filmu */
 .movie-info {
   margin-top: 10px;
+  color: #ffffff; /* Belo za tekst na kartici */
 }
+
 .movie-link {
   text-decoration: none;
   color: inherit;
@@ -80,6 +95,8 @@ h1 {
 .movie-details {
   text-align: center;
   padding: 20px;
+  background-color: #121212;
+  color: #fff;
 }
 
 .movie-details img {
@@ -89,18 +106,20 @@ h1 {
 
 .movie-details h1 {
   margin-top: 20px;
+  color: #bb86fc;
 }
 
 .back-button {
   display: inline-block;
   margin-bottom: 20px;
   text-decoration: none;
-  color: #007bff;
+  color: #bb86fc;
   font-size: 16px;
 }
 
 .back-button:hover {
   text-decoration: underline;
+  color: #3700b3;
 }
 .movie-details p {
   font-size: 16px;
